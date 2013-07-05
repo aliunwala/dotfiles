@@ -1,0 +1,2 @@
+noremap <silent> h : tabprevious<CR>
+noremap <silent> l : tabnext <CR>
