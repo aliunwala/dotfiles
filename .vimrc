@@ -1,3 +1,15 @@
+""""""""""""""""""""""""""""""
+" => Plugin Related
+""""""""""""""""""""""""""""""
+let g:pathogen_disabled = ["vim-multiple-cursors-master"]
+execute pathogen#infect()
+call pathogen#helptags()
+"autocmd vimenter * NERDTree  " Nerd tree starts up everytime
+autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no files specified
+
+""""""""""""""""""""""""""""""
+" => Basic Settings
+""""""""""""""""""""""""""""""
 syntax enable
 set number         "line numbers
 filetype on        "vim detectects file type
@@ -21,9 +33,13 @@ set wrap           "Wrap lines
 set undolevels=5000 "how many undos can be done
 "colorscheme desert "background colorscheme
 "colorscheme evening "background colorscheme
-colorscheme grb256 "background colorscheme
+colorscheme grb256 "background colorscheme // Needs to be called after plugin calls
 
 au BufNewFile,BufRead *.max set filetype=perl
+au BufNewFile,BufRead *.sv set filetype=verilog
+au BufNewFile,BufRead *.svh set filetype=verilog
+au BufNewFile,BufRead *.v set filetype=verilog
+au BufNewFile,BufRead *.vh set filetype=verilog
 
 set showmatch      "highlight matching braces
 set mat=5          "how long showmatch highlights braces
@@ -65,12 +81,15 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 " Treat long lines as break lines (useful when moving around in them)
 map j gj
 map k gk
+nnoremap <S-j> 7j
+nnoremap <S-k> 7k
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+" Smart way to move between windows "traded functionaliaty for tab movment
+" commands below
+"map <C-j> <C-W>j
+"map <C-k> <C-W>k
+"map <C-h> <C-W>h
+"map <C-l> <C-W>l
 
 " Move Cursor
 imap <silent> <A-h> <Left>
@@ -92,6 +111,9 @@ map <leader>tn :tabnew<cr>
 "map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
+nnoremap <leader>
+nnoremap <C-h> :tabprev<cr>
+nnoremap <C-l> :tabnext<cr>
 
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
@@ -144,6 +166,7 @@ endfunc
 
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
 
 
 
