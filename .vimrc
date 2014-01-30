@@ -1,15 +1,28 @@
 """"""""""""""""""""""""""""""
 " => Plugin Related
 """"""""""""""""""""""""""""""
-let g:pathogen_disabled = ["vim-multiple-cursors-master"]
+"let g:pathogen_disabled = ["vim-multiple-cursors-master"]
 execute pathogen#infect()
 call pathogen#helptags()
 "autocmd vimenter * NERDTree  " Nerd tree starts up everytime
 autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no files specified
+""""""""""""""""""""""""""""""
+" => Plugin Cheat sheet
+""""""""""""""""""""""""""""""
+" Muticursor
+"   ctrl+n highlight and move forward
+"   ctrl+p go back one highlight
+"   ctrl+x skip one cursor position
+" NerdTree
+"   
+" NerdCommenter
+"   leader+ci toggle comment per line
+"   leader+cc add comment
 
 """"""""""""""""""""""""""""""
 " => Basic Settings
 """"""""""""""""""""""""""""""
+set list lcs=tab:\.\ 
 syntax enable
 set number         "line numbers
 filetype on        "vim detectects file type
@@ -33,13 +46,17 @@ set wrap           "Wrap lines
 set undolevels=5000 "how many undos can be done
 "colorscheme desert "background colorscheme
 "colorscheme evening "background colorscheme
-colorscheme grb256 "background colorscheme // Needs to be called after plugin calls
+colorscheme oceandeep "background colorscheme
+"colorscheme twilight "background colorscheme
+"colorscheme wombat256mod "background colorscheme
+"colorscheme grb256 "background colorscheme // Needs to be called after plugin calls
 
 au BufNewFile,BufRead *.max set filetype=perl
 au BufNewFile,BufRead *.sv set filetype=verilog
 au BufNewFile,BufRead *.svh set filetype=verilog
 au BufNewFile,BufRead *.v set filetype=verilog
 au BufNewFile,BufRead *.vh set filetype=verilog
+au BufNewFile,BufRead *.launch set filetype=xml
 
 set showmatch      "highlight matching braces
 set mat=5          "how long showmatch highlights braces
@@ -66,6 +83,11 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+
+" Add visual red col at 80 char
+set colorcolumn=80
+" Add visual identifier for wraped lines
+set showbreak=>>>
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -166,8 +188,7 @@ endfunc
 
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-
-
+"--------------------------------------------
 
 
 
