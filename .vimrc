@@ -88,7 +88,7 @@ nmap <leader>q :q!<cr>
 set colorcolumn=80
 " Add visual identifier for wraped lines
 set showbreak=>>>
-
+"set guifont=Monospace\ 15
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -150,6 +150,13 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" to run do :call Font(12)
+function! Font(size) range
+        let l:mytemp ="Monospace\\ " . a:size 
+        echo l:mytemp
+        execute "set guifont=" . l:mytemp
+endfunction
+:call Font(12)
 
 function! VisualSelection(direction) range
     let l:saved_reg = @"
