@@ -6,6 +6,15 @@ execute pathogen#infect()
 call pathogen#helptags()
 "autocmd vimenter * NERDTree  " Nerd tree starts up everytime
 autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no files specified
+
+""""""""""""""""""""""""""""""
+" => Tag list config 
+""""""""""""""""""""""""""""""
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 """"""""""""""""""""""""""""""
 " => Plugin Cheat sheet
 """"""""""""""""""""""""""""""
@@ -18,6 +27,13 @@ autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no fi
 " NerdCommenter
 "   leader+ci toggle comment per line
 "   leader+cc add comment
+" Tag List
+"   <F4> show tags
+"   <F8>
+"  +             Open a fold
+"  -             Close a fold
+"  *             Open all folds
+"  =             Close all folds
 
 """"""""""""""""""""""""""""""
 " => Basic Settings
@@ -47,6 +63,7 @@ set undolevels=5000 "how many undos can be done
 "colorscheme desert "background colorscheme
 "colorscheme evening "background colorscheme
 colorscheme oceandeep "background colorscheme
+colorscheme chocolateliquor "background colorscheme
 "colorscheme twilight "background colorscheme
 "colorscheme wombat256mod "background colorscheme
 "colorscheme grb256 "background colorscheme // Needs to be called after plugin calls
@@ -97,6 +114,15 @@ set showbreak=>>>
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,11 +171,59 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimgrep searching and cope displaying
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" When you press gv you vimgrep after the selected text
+vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+" Open vimgrep and put the cursor in the right position
+map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+
+" Vimgreps in the current file
+map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+" Do :help cope if you are unsure what cope is. It's super useful!
+"
+" When you search with vimgrep, display your results in cope by doing:
+"   <leader>cc
+"
+" To go to the next search result do:
+"   <leader>n
+"
+" To go to the previous search results do:
+"   <leader>p
+"
+map <leader>cc :botright cope<cr>
+map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+map <leader>n :cn<cr>
+map <leader>p :cp<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Spell checking
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
 " to run do :call Font(12)
 function! Font(size) range
         let l:mytemp ="Monospace\\ " . a:size 
@@ -157,6 +231,14 @@ function! Font(size) range
         execute "set guifont=" . l:mytemp
 endfunction
 :call Font(12)
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
 
 function! VisualSelection(direction) range
     let l:saved_reg = @"
@@ -195,7 +277,12 @@ endfunc
 
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
-"--------------------------------------------
+
+
+
+
+
+
 
 
 
