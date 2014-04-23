@@ -14,7 +14,11 @@ let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_WinWidth = 50
 map <F4> :TlistToggle<cr>
 map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
+""""""""""""""""""""""""""""""
+" => Zooming In and Out
+""""""""""""""""""""""""""""""
+map - :call FontUpDown('d')<cr>
+map = :call FontUpDown('u')<cr>
 """"""""""""""""""""""""""""""
 " => Plugin Cheat sheet
 """"""""""""""""""""""""""""""
@@ -132,6 +136,8 @@ map k gk
 nnoremap <S-j> 7j
 nnoremap <S-k> 7k
 
+"inoremap <C-n> <C-p> " Broken Need to fix flip n to p
+
 " Smart way to move between windows "traded functionaliaty for tab movment
 " commands below
 "map <C-j> <C-W>j
@@ -218,6 +224,9 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" good scripting how to is at
+" http://www.ibm.com/developerworks/library/l-vim-script-1/
+" http://learnvimscriptthehardway.stevelosh.com/
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -230,7 +239,19 @@ function! Font(size) range
         echo l:mytemp
         execute "set guifont=" . l:mytemp
 endfunction
-:call Font(12)
+"Example :call Font(11)
+
+let g:globalsize =12
+function! FontUpDown(size1) range
+        if a:size1 == 'u'
+            execute Font(g:globalsize+1)
+            let g:globalsize = g:globalsize+1
+        endif
+        if a:size1 == 'd'
+            execute Font(g:globalsize-1)
+            let g:globalsize = g:globalsize-1
+        endif
+endfunction
 
 " Returns true if paste mode is enabled
 function! HasPaste()
