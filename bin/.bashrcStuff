@@ -1,0 +1,81 @@
+source /opt/ros/hydro/setup.bash
+source ~/catkin_ws/devel/setup.bash
+alias catmake='cd ~/catkin_ws/ ; catkin_make ; cd -'
+#Google Search with w3m
+alias goose='~/bin/goose' 
+alias hist='history | grep -ir' 
+alias tunnel_mario='ssh  -N -f -L 5955:localhost:5955 aunwala@mario.ece.utexas.edu' 
+alias tunnel_luigi='ssh  -N -f -L 5905:localhost:5905 aunwala@luigi.ece.utexas.edu' 
+alias vnc_normal='vinagre' 
+#source ~/.bashrcULTIMATE
+
+#PS1='\[\033]0;\w\007\]\[\e[35;1m\]\u\[\e[0m\]\[\e[32m\]@\h\[\e[34m\]\w \[\e[33m\]\$ \[\e[0m\]'	# purple, green, blue prompt w/default black & dir title
+
+##################################################
+# Jsnx's prompt of power (disabled by a single 	 #
+# "#")			 			 #
+##################################################
+
+# I used to have the prompt set up as a bunch of functions; but that
+# didn't work very well with sh. Now, I have mastered the various
+# levels of evaluation and quoting of the shell and can confidently
+# write hideous macros!
+ DARK="\[\e[01;34m\]"
+ NORM="\[\e[01;32m\]"
+ FADE="\[\e[01;30m\]"
+ REST="\[\e[00;00m\]"
+ HIGH="\[\e[01;33m\]"
+ dir="pwd -P | awk '{ printf \"%-65.65s\", \$1 }'"
+ sub="sed -r 's/^/$NORM/ ; s|/|$FADE&$NORM|g ; s/:/$DARK&$NORM/g'"
+ t="date +%H:%M"
+ hist="history 1 | xargs echo '' | awk '{ printf \"%03.3d\", \$1 + 1 }'"
+ warn="[ $USER = root ] && echo -n '$HIGH' || echo -n '$FADE'"
+ bang="echo -ne '\x21'"  ## this gives me a single '!' in bash and sh
+ prompt=" $DARK: \`$dir | $sub\` \`$warn;$bang;\`$NORM\`$hist\` \`$t | $sub\`
+ $DARK:\`$warn\`; $REST"
+ prepend=''
+ if [ "${TERM}" = "xterm" ]
+ then
+  my_tty=`tty | awk -F/ '{ print $3 $4}'`
+  xterm_title="\[\e]0;${my_tty} \u@\H\007\]"
+  prepend="${xterm_title}"
+ fi
+# export  PROMPT_COMMAND="export PS1=\"${prepend}${prompt}\""
+ export  PS1="${prepend}${prompt}"
+ export  PS2='  '
+##################################################
+# Directory shortcuts				 #
+##################################################
+
+alias back='cd $OLDPWD'
+alias backgrounds='cd ~/Pictures/Backgrounds'
+alias backups='cd ~/Backups'
+alias books='cd ~/eBooks'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias documents='cd ~/Documents'
+alias downloads='cd ~/Downloads'
+alias drive-c='cd ~/.wine/drive_c'
+alias dropbox='cd ~/Dropbox'
+alias home='cd ~/'
+alias images='cd ~/Images'
+alias localhost='cd /var/www'
+alias movies='cd ~/Videos'
+alias music='cd ~/Music'
+alias nautilus-scripts='cd ~/.gnome2/nautilus-scripts'
+alias nemo-scripts='cd ~/.gnome2/nemo-scripts'
+alias packages='cd ~/Packages'
+alias packets='cd ~/.packets'
+alias pictures='cd ~/Pictures'
+alias ppc='cd ~/PPC'
+alias public='cd ~/Public'
+alias temp='cd ~/Temp'
+alias test='cd ~/.test'
+alias torrents='cd ~/Torrents'
+alias ubuntu-texts='cd ~/Documents/"Ubuntu Texts"'
+alias videos='cd ~/Videos'
+alias webdesign='cd ~/Web/Design'
+alias whereami='display_info'
