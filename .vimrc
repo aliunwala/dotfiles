@@ -48,6 +48,10 @@ set number         "line numbers
 filetype on        "vim detectects file type
 filetype plugin on "??
 
+" Fix Copy Past Stupidity
+"set clipboard=unnamed "Probably only for windows
+set clipboard=unnamedplus
+
 set tabstop=4      "how many char's a tab LOOKs 
 set softtabstop=4 "how many col are added for a tab
 set shiftwidth=4
