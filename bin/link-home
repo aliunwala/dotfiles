@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# link dotfiles into home directory
+
+cd
+
+for f in .dotfiles/* .dotfiles/.??*
+do
+	test "$f" != ".dotfiles/.git" -a "$f" != ".dotfiles/README.md" && ln -sf $f .
+done
