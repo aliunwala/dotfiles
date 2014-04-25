@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/goatfigpc/catkin_ws/src/learning_actionlib/src'
 let g:netrw_dirhist_2='/home/goatfigpc/catkin_ws/src/segbot_apps/segbot_logical_translator/src/libsegbot_logical_translator'
 let g:netrw_dirhist_3='/home/goatfigpc/catkin_ws/src/segbot_apps/segbot_logical_translator/src'
 let g:netrw_dirhist_4='/home/goatfigpc/catkin_ws/src/segbot_apps/segbot_logical_translator/src/nodes'
 let g:netrw_dirhist_5='/home/goatfigpc'
 let g:netrw_dirhist_6='/home/goatfig/catkin_ws/src'
+let g:netrw_dirhist_7='/home/goatfig'

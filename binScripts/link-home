@@ -3,7 +3,8 @@
 # link dotfiles into home directory
 
 cd
-
+rm -rf ~/.vim ~/.vimrc ~/.vimperatorrc ~/.gvimrc ~/.bashrc 
+rm -rf ~/binScripts
 for f in .dotfiles/* .dotfiles/.??*
 do
 	test "$f" != ".dotfiles/.git" -a "$f" != ".dotfiles/README.md" && ln -sf $f .
