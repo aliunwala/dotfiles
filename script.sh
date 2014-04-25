@@ -1,4 +1,4 @@
-jlear
+clear
 echo "Removing .vim .vimrc .vimperatorrc"
 rm -rf ~/.vim ~/.vimrc ~/.vimperatorrc ~/.gvimrc
 echo "Adding back .vim .vimrc .vimperatorrc"
