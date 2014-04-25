@@ -50,6 +50,7 @@ alias vnc_normal='vinagre'
 ##################################################
 
 alias back='cd $OLDPWD'
+alias cdd='cd !$'
 alias backgrounds='cd ~/Pictures/Backgrounds'
 alias backups='cd ~/Backups'
 alias books='cd ~/eBooks'
