@@ -113,7 +113,10 @@ nmap <leader>q :q!<cr>
 set colorcolumn=80
 " Add visual identifier for wraped lines
 set showbreak=>>>
-"set guifont=Monospace\ 15
+" Remove help menu from popping up
+nnoremap <f1> <Nop>
+vnoremap <f1> <Nop>
+inoremap <f1> <Nop>
 """"""""""""""""""""""""""""""
 " => Visual mode related
 """"""""""""""""""""""""""""""
@@ -162,7 +165,7 @@ vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Fast cmd mode
-imap ii <Esc>
+imap jk <Esc>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
