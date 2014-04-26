@@ -104,4 +104,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-source ~/bin/.bashrcStuff
+source ~/binScripts/.bashrcStuff
