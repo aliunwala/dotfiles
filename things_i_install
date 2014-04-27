@@ -1,3 +1,4 @@
+sudo apt-get install git
 sudo apt-get install vinagre
 sudo add-apt-repository ppa:michael-astrapi/ppa
 sudo apt-get update && sudo apt-get install truecrypt
