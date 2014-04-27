@@ -3,3 +3,4 @@ sudo add-apt-repository ppa:michael-astrapi/ppa
 sudo apt-get update && sudo apt-get install truecrypt
 apt-get install exuberant-ctags
 sudo apt-get install exuberant-ctags
+sudo apt-get install debsums
