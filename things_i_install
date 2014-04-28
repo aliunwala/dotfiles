@@ -23,3 +23,4 @@ sudo apt-get update && sudo apt-get install truecrypt
 sudo apt-get install exuberant-ctags
 sudo apt-get install debsums
 sudo apt-get install vim-gnome
+sudo apt-get install ubuntu-restricted-extras
