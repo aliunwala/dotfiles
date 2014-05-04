@@ -1,9 +1,10 @@
 source /opt/ros/hydro/setup.bash
 source ~/catkin_ws/devel/setup.bash
+alias vimsession='gvim -S ~/vimsession'
 alias catmake='cd ~/catkin_ws/ ; catkin_make ; cd -'
 alias cdsrc='cd ~/catkin_ws/src'
 #Google Search with w3m
-alias goose='~/bin/goose' 
+alias goose='~/binScripts/goose' 
 alias hist='history | grep -ir' 
 alias tunnel_mario='ssh  -N -f -L 5955:localhost:5955 aunwala@mario.ece.utexas.edu' 
 alias tunnel_luigi='ssh  -N -f -L 5905:localhost:5905 aunwala@luigi.ece.utexas.edu' 
@@ -76,7 +77,6 @@ alias pictures='cd ~/Pictures'
 alias ppc='cd ~/PPC'
 alias public='cd ~/Public'
 alias temp='cd ~/Temp'
-alias test='cd ~/.test'
 alias torrents='cd ~/Torrents'
 alias ubuntu-texts='cd ~/Documents/"Ubuntu Texts"'
 alias videos='cd ~/Videos'
