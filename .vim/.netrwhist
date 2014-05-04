@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/goatfig/.dotfiles/.vim/bundle/vim-colors-solarized-master'
-let g:netrw_dirhist_2='/home/goatfig/.dotfiles/.vim/bundle/vim-colors-solarized-master/bitmaps'
-let g:netrw_dirhist_3='/home/goatfig/.dotfiles/.vim/bundle/vim-colors-solarized-master'
-let g:netrw_dirhist_4='/home/goatfig/.dotfiles/.vim/bundle/vim-colors-solarized-master/autoload'
-let g:netrw_dirhist_5='/home/goatfig/.dotfiles'
-let g:netrw_dirhist_6='/home/goatfig'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/src'
+let g:netrw_dirhist_2='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning'
+let g:netrw_dirhist_3='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/scripts'
+let g:netrw_dirhist_4='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning'
+let g:netrw_dirhist_5='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/src'
+let g:netrw_dirhist_6='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/src/bwi_planning'
+let g:netrw_dirhist_7='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/launch'
+let g:netrw_dirhist_8='/home/goatfigpc'

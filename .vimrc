@@ -1,19 +1,85 @@
 """"""""""""""""""""""""""""""
-" => Plugin Related
+" => Vundle Related 
 """"""""""""""""""""""""""""""
-"let g:pathogen_disabled = ["vim-multiple-cursors-master"]
-execute pathogen#infect()
-call pathogen#helptags()
-"autocmd vimenter * NERDTree  " Nerd tree starts up everytime
-autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no files specified
+    ""let g:pathogen_disabled = ["vim-multiple-cursors-master"]
+    "execute pathogen#infect()
+    "call pathogen#helptags()
+    ""autocmd vimenter * NERDTree  " Nerd tree starts up everytime
+    "autocmd vimenter * if !argc() | NERDTree | endif "Nerd tree starts up when no files specified
+    
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+    
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+    " alternatively, pass a path where Vundle should install plugins
+    "call vundle#begin('~/some/path/here')
+    
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'godlygeek/csapprox'
+    Plugin 'vim-scripts/Colour-Sampler-Pack'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'vim-scripts/taglist.vim'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'terryma/vim-multiple-cursors'
+    Plugin 'Lokaltog/vim-easymotion'
+    Plugin 'kien/ctrlp.vim'                
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'Lokaltog/powerline'
+    "Plugin 'scrooloose/syntastic'
 
+
+    
+    "" The following are examples of different formats supported.
+    "" Keep Plugin commands between vundle#begin/end.
+    "" plugin on GitHub repo
+    "Plugin 'tpope/vim-fugitive'
+    "" plugin from http://vim-scripts.org/vim/scripts.html
+    "Plugin 'L9'
+    "" Git plugin not hosted on GitHub
+    "Plugin 'git://git.wincent.com/command-t.git'
+    "" git repos on your local machine (i.e. when working on your own plugin)
+    "Plugin 'file:///home/gmarik/path/to/plugin'
+    "" The sparkup vim script is in a subdirectory of this repo called vim.
+    "" Pass the path to set the runtimepath properly.
+    "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+    "" Avoid a name conflict with L9
+    "Plugin 'user/L9', {'name': 'newL9'}
+    
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+    " To ignore plugin indent changes, instead use:
+    "filetype plugin on
+    "
+    " Brief help
+    " :PluginList          - list configured plugins
+    " :PluginInstall(!)    - install (update) plugins
+    " :PluginSearch(!) foo - search (or refresh cache first) for foo
+    " :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " Put your non-Plugin stuff after this line
+""""""""""""""""""""""""""""""
+" => Plugin related 
+""""""""""""""""""""""""""""""
+    "---------------------
+    " => YouCompleteMe
+    "---------------------
+    imap <Tab> <C-P>
+    set complete=.,b,u,]
+    set wildmode=longest,list:longest
+    set completeopt=menu,preview
 """"""""""""""""""""""""""""""
 " => Tag list config 
 """"""""""""""""""""""""""""""
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-let Tlist_WinWidth = 50
-map <F4> :TlistToggle<cr>
-map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+    let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+    let Tlist_WinWidth = 50
+    map <F4> :TlistToggle<cr>
+    map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 """"""""""""""""""""""""""""""
 " => Zooming In and Out
 """"""""""""""""""""""""""""""
