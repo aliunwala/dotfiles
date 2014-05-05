@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/src'
 let g:netrw_dirhist_2='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning'
 let g:netrw_dirhist_3='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/scripts'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/s
 let g:netrw_dirhist_6='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/src/bwi_planning'
 let g:netrw_dirhist_7='/home/goatfigpc/catkin_ws/src/bwi_planning/bwi_planning/launch'
 let g:netrw_dirhist_8='/home/goatfigpc'
+let g:netrw_dirhist_9='/home/goatfigpc/.dotfiles/.vim/bundle/Vundle.vim'
