@@ -29,7 +29,12 @@
     Plugin 'kien/ctrlp.vim'                
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'Lokaltog/powerline'
+    Plugin 'nathanaelkane/vim-indent-guides'
+    "Plugin 'file:///home/goatfigpc/.dotfiles/.vim/bundle/grb256-master' "
+    "already in the right place so no need to add it 
+
     "Plugin 'scrooloose/syntastic'
+    
 
 
     
