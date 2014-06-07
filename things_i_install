@@ -1,6 +1,14 @@
 #!/bin/sh
 #other issues:
 #  If swapfile could not be installed at boot try https://www.digitalocean.com/community/articles/how-to-add-swap-on-ubuntu-12-04
+
+# ROS things
+sudo apt-get install ros-hydro-sound-play
+sudo apt-get install python-wstool
+sudo apt-get install ros-hydro-roslint
+sudo apt-get install ros-hydro-cmake-modules
+sudo apt-get install gringo
+
 sudo apt-get install chromium-browser
 sudo apt-get install mercurial
 #-----
