@@ -1,8 +1,12 @@
 source /opt/ros/hydro/setup.bash
 source ~/catkin_ws/devel/setup.bash
+alias eclipse_ros_make='cd ~/catkin_ws/src/;  cmake -G "Eclipse CDT4 - Unix Makefiles" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8'
 alias vimsession='gvim -S ~/vimsession'
 alias catmake='cd ~/catkin_ws/ ; catkin_make ; cd -'
+alias mouse_unfreeze='sudo modprobe -r psmouse; sudo modprobe psmouse'
 alias cdsrc='cd ~/catkin_ws/src'
+alias op='xdg-open'
+alias givm='gvim'
 #Google Search with w3m
 alias goose='~/binScripts/goose' 
 alias hist='history | grep -ir' 
