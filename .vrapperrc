@@ -1,0 +1,6 @@
+imap jk <Esc>
+set ignorecase   
+nnoremap <C-h>  gT
+nnoremap <C-l> gt 
+nnoremap <S-j> 7j
+nnoremap <S-k> 7k

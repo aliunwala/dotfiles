@@ -3,7 +3,7 @@
 # link dotfiles into home directory
 
 cd
-rm -rf ~/.vim ~/.vimrc ~/.vimperatorrc ~/.gvimrc ~/.bashrc 
+rm -rf ~/.vim ~/.vimrc ~/.vimperatorrc ~/.gvimrc ~/.bashrc ~/.vrapperrc 
 rm -rf ~/binScripts
 rm -rf ~/.inputrc
 for f in .dotfiles/* .dotfiles/.??*
