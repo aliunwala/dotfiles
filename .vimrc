@@ -75,10 +75,10 @@
     "---------------------
     " => YouCompleteMe
     "---------------------
-    imap <Tab> <C-P>
-    set complete=.,b,u,]
-    set wildmode=longest,list:longest
-    set completeopt=menu,preview
+    "imap <Tab> <C-P>
+    "set complete=.,b,u,]
+    "set wildmode=longest,list:longest
+    "set completeopt=menu,preview
     "---------------------
     " => ctrlp - fuzzymatching file open
     "---------------------
@@ -282,6 +282,8 @@
     nnoremap <leader>
     nnoremap <C-h> :tabprev<cr>
     nnoremap <C-l> :tabnext<cr>
+    inoremap <C-h> <esc> :tabprev<cr> 
+    inoremap <C-l> <esc> :tabnext<cr>
     
     " Opens a new tab with the current buffer's path
     " Super useful when editing files in the same directory

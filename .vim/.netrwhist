@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/goatfigpc/catkin_ws/src/bwi_experimental/bwi_coffee/launch'
-let g:netrw_dirhist_2='/home/goatfigpc/thesis'
-let g:netrw_dirhist_3='/home/goatfigpc'
-let g:netrw_dirhist_4='/home'
-let g:netrw_dirhist_5='/home/goatfigpc/thesis'
-let g:netrw_dirhist_6='/home/goatfigpc/catkin_ws/src/bwi_experimental/bwi_coffee/domain'
