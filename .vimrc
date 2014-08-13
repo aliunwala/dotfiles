@@ -210,7 +210,7 @@
     "---------------------
     " => Make tab key act properly
     "---------------------
-    "imap <Tab> <C-P>
+    imap <Tab> <C-P>
     nnoremap <Tab> >>_
     nnoremap <S-Tab> <<_
     inoremap <S-Tab> <C-D>
@@ -284,6 +284,8 @@
     nnoremap <leader>
     nnoremap <C-h> :tabprev<cr>
     nnoremap <C-l> :tabnext<cr>
+    inoremap <C-h> <esc> :tabprev<cr> 
+    inoremap <C-l> <esc> :tabnext<cr>
     
     " Opens a new tab with the current buffer's path
     " Super useful when editing files in the same directory

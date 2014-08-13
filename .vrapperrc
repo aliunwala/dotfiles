@@ -4,3 +4,7 @@ nnoremap <C-h>  gT
 nnoremap <C-l> gt 
 nnoremap <S-j> 7j
 nnoremap <S-k> 7k
+nnoremap <C-h> :tabprevious
+nnoremap <C-l> :tabnext
+nnoremap <S-h> :tabprevious
+nnoremap <S-l> :tabnext
