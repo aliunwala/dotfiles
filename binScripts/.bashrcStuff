@@ -10,6 +10,8 @@ alias givm='gvim'
 #Google Search with w3m
 alias goose='~/binScripts/goose' 
 alias hist='history | grep -ir' 
+alias wget_images='wget -r -A jpeg,jpg,bmp,gif,png' # 1 argument: the webpage 
+alias wget_images_tumblr='wget --user-agent="Mozilla/5.0 XXX" --recursive --level=0 --convert-links --backup-converted --page-requisites --domains="tredicielupo.tumblr.com,media.tumblr.com" --exclude-domains="." --span-hosts http://tredicielupo.tumblr.com/'
 alias tunnel_mario='ssh  -N -f -L 5955:localhost:5955 aunwala@mario.ece.utexas.edu' 
 alias tunnel_luigi='ssh  -N -f -L 5905:localhost:5905 aunwala@luigi.ece.utexas.edu' 
 alias vnc_normal='vinagre' 
