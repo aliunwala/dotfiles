@@ -28,6 +28,7 @@
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'kien/ctrlp.vim'                
     "Plugin 'Valloric/YouCompleteMe'
+    Plugin 'vim-scripts/AutoComplPop'
     Plugin 'Lokaltog/powerline'
     Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -76,6 +77,7 @@
     " => YouCompleteMe
     "---------------------
     "imap <Tab> <C-P>
+    inoremap <C-space> <C-p>
     "set complete=.,b,u,]
     "set wildmode=longest,list:longest
     "set completeopt=menu,preview
@@ -418,7 +420,23 @@
     
     
     
-    
+    "Use TAB to complete when typing words, else inserts TABs as usual.
+    "Uses dictionary and source files to find matching words to complete.
+
+    "See help completion for source,
+    "Note: usual completion is on <C-n> but more trouble to press all the time.
+    "Never type the same word twice and maybe learn a new spellings!
+    "Use the Linux dictionary when spelling is in doubt.
+    "Window users can copy the file to their machine.
+    function! Tab_Or_Complete()
+      if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+        return "\<C-N>"
+      else
+        return "\<Tab>"
+      endif
+    endfunction
+    :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+    :set dictionary="/usr/dict/words"
     
     
     
