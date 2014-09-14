@@ -16,8 +16,8 @@ alias tunnel_mario='ssh  -N -f -L 5955:localhost:5955 aunwala@mario.ece.utexas.e
 alias tunnel_luigi='ssh  -N -f -L 5905:localhost:5905 aunwala@luigi.ece.utexas.edu' 
 alias vnc_normal='vinagre' 
  alias backup_external_to_internal_drives='rsync -avzhr /media/Seagate\ Expansion\ Drive/ /media/Internal\ Storage/'
- alias tws='cd ~/Downloads/TWS/IBJts/; java -cp jts.jar:total.2013.jar -Xmx512M -XX:MaxPermSize=128M jclient.LoginFrame .
-'
+ alias tws='cd ~/Downloads/TWS/IBJts/; java -cp jts.jar:total.2013.jar -Xmx512M -XX:MaxPermSize=128M jclient.LoginFrame .'
+ alias ssh_webpage='ssh -X aliunw@robert-treat-paine.dreamhost.com'
  
 #source ~/.bashrcULTIMATE
 
