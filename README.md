@@ -8,8 +8,8 @@ Usage:
 
 To get these files and link them into the home directory:
 
-    cd
-    git clone git@github.com:aliunwala/dotfiles.git .dotfiles
+    cd ~
+    git clone https://github.com/aliunwala/dotfiles.git .dotfiles
     .dotfiles/bin/link-home
     
 # Heading 1
