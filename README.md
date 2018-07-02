@@ -10,7 +10,8 @@ To get these files and link them into the home directory:
 
     cd ~
     git clone https://github.com/aliunwala/dotfiles.git .dotfiles
-    .dotfiles/bin/link-home
+    .dotfiles/binScripts/link-home
+    Then run vim and do :PluginInstall
+
+   
     
-# Heading 1
-## Heading 2
